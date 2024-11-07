@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: Country
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: noc
+        data_type: string
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+      - name: country
+        data_type: string
+        tests:
+          - not_null

@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: olympics_analysis_cs378_raw
+    schema: olympics_analysis_cs378_raw
+    tables:
+      - name: all_countries
+      - name: all_events
+      - name: all_medals
+      - name: athlete_details_by_event
+      - name: medal_by_country
+      - name: most_medals_by_sport_world_record
+      - name: most_medals_by_type_world_record
+      - name: most_medals_won_world_record
+      - name: noc_regions
+      - name: summer_olympics_info
+      - name: teams
+      - name: winter_olympics_info

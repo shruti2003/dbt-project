@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: summer_olympics_medal
+    description: "Table for Summer Olympics Medal information, joined with Event model to retrieve sport_id and deduplicated by athlete, year, event, and medal."
+    columns:
+      - name: name
+        description: "Name of the athlete."
+      - name: year
+        description: "Year of the Olympics."
+      - name: event
+        description: "Event name."
+      - name: medal
+        description: "Medal type (Gold, Silver, Bronze)."
+      - name: city
+        description: "Host city for the Summer Olympics."
+      - name: sport_id
+        description: "Sport ID obtained by joining the Event model."
+      - name: discipline
+        description: "Discipline in which the athlete participated."
+      - name: noc
+        description: "National Olympic Committee code."
+      - name: gender
+        description: "Gender of the athlete."
+      - name: event_gender
+        description: "Gender of the event."

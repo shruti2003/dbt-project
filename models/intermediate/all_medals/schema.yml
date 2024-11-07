@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: Medal
+    description: "A table with transformed medal data containing athlete details and medal type."
+    columns:
+      - name: medalist_id
+        description: "Unique identifier for each medalist."
+        tests:
+          - not_null
+          - unique  # Ensures no duplicate `medalist_id`s
+      - name: athlete
+        description: "Unique identifier for the athlete."
+        tests:
+          - not_null
+      - name: year
+        description: "Year in which the medal was awarded."
+        tests:
+          - not_null
+      - name: medal
+        description: "Type of medal awarded (Gold, Silver, Bronze)."
+        tests:
+          - not_null
+      - name: season
+        description: "Season in which the medal was awarded."
+        tests:
+          - not_null
+      - name: medal_value
+        description: "Numeric value representing the medal ranking (1=Gold, 2=Silver, 3=Bronze)."

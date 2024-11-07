@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: winter_olympics_medal
+    description: "Creates a table with information about medals won in the Winter Olympics, including sport_id from the Event model."
+    columns:
+      - name: year
+        description: "The year of the Winter Olympics."
+      - name: discipline
+        description: "The discipline of the event (e.g., Alpine Skiing, Ice Hockey)."
+      - name: event
+        description: "The event within the discipline (e.g., Men's Slalom, Women's Biathlon)."
+      - name: noc
+        description: "The National Olympic Committee code."
+      - name: event_gender
+        description: "Gender of the event (e.g., M, F)."
+      - name: medal
+        description: "The medal won in the event (e.g., Gold, Silver, Bronze)."
+      - name: city
+        description: "The host city of the Winter Olympics."
+      - name: sport_id
+        description: "The ID of the sport, linked from the Event model."
+
+  - name: insert_missing_sports
+    description: "Identifies and inserts new sports into the Event table."
+    columns:
+      - name: sport_id
+        description: "The auto-generated sport_id."
+      - name: sport
+        description: "The name of the new sport."

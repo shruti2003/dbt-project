@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: Total_Medals_Record
+    description: "This model contains the records of athletes' total medals won, with gender and sport information."
+    columns:
+      - name: num_medals
+        description: "The number of medals won by the athlete."
+        data_type: integer
+        tests:
+          - not_null
+      - name: gender
+        description: "The gender of the athlete, with first letter capitalized."
+        data_type: string
+        tests:
+          - not_null
+      - name: first_name
+        description: "The first name of the athlete."
+        data_type: string
+        tests:
+          - not_null
+      - name: last_name
+        description: "The last name of the athlete."
+        data_type: string
+        tests:
+          - not_null
+      - name: noc
+        description: "The National Olympic Committee code for the athlete's country."
+        data_type: string
+        tests:
+          - not_null
+      - name: sport
+        description: "The sport the athlete participated in, with first letter capitalized."
+        data_type: string
+        tests:
+          - not_null

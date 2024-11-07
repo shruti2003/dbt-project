@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: Event
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: sport_id
+        data_type: string
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+      - name: sport
+        data_type: string
+        tests:
+          - not_null

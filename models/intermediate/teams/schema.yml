@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: tmp_teams
+    description: "Staging model for the teams table with necessary transformations (casting and renaming)."
+    columns:
+      - name: code
+        description: "Code for the team."
+      - name: current
+        description: "Current status of the team."
+      - name: team
+        description: "The team name."
+      - name: event_gender
+        description: "The gender of the team (renamed from team_gender)."
+      - name: noc
+        description: "National Olympic Committee code."
+      - name: country
+        description: "Country of the team."
+      - name: country_long
+        description: "Full name of the country."
+      - name: discipline
+        description: "The discipline for the team."
+      - name: disciplines_code
+        description: "Code for the discipline."
+      - name: events
+        description: "Events associated with the team."
+      - name: athletes
+        description: "List of athletes in the team (ARRAY<STRING>)."
+      - name: coaches_codes
+        description: "List of coach codes (ARRAY<STRING>)."
+      - name: athletes_codes
+        description: "List of athlete codes (ARRAY<STRING>)."
+      - name: num_athletes
+        description: "Number of athletes in the team."
+      - name: coaches_code
+        description: "Code for the coach."
+      - name: num_coaches
+        description: "Number of coaches in the team."
+
+  - name: teams
+    description: "Final teams table after joining with Discipline_Code to get discipline_id."
+    columns:
+      - name: code
+        description: "Code for the team."
+      - name: current
+        description: "Current status of the team."
+      - name: team
+        description: "The team name."
+      - name: event_gender
+        description: "The gender of the event."
+      - name: noc
+        description: "National Olympic Committee code."
+      - name: country
+        description: "Country of the team."
+      - name: country_long
+        description: "Full name of the country."
+      - name: discipline_id
+        description: "The discipline ID linked from Discipline_Code."
+      - name: discipline
+        description: "The discipline for the team."
+      - name: events
+        description: "Events associated with the team."
+      - name: athletes
+        description: "List of athletes in the team (ARRAY<STRING>)."
+      - name: coaches_codes
+        description: "List of coach codes (ARRAY<STRING>)."
+      - name: athletes_codes
+        description: "List of athlete codes (ARRAY<STRING>)."
+      - name: num_athletes
+        description: "Number of athletes in the team."
+      - name: coaches_code
+        description: "Code for the coach."
+      - name: num_coaches
+        description: "Number of coaches in the team."

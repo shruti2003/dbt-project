@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: sport_medals_record
+    description: "This model contains the cleaned and deduplicated records of athletes' medal counts by sport."
+    columns:
+      - name: sport_id
+        description: "Unique identifier for the sport."
+        tests:
+          - not_null
+          - unique  # Ensuring sport_id is unique
+      - name: name
+        description: "The full name of the athlete, combining first and last name."
+        tests:
+          - not_null
+          - unique  # Ensuring name is unique
+      - name: noc
+        description: "The National Olympic Committee code representing the athlete's country."
+      - name: start_year
+        description: "The year the athlete participated in the Olympic Games."
+      - name: end_year
+        description: "The year the athlete stopped participating in the Olympic Games."
+      - name: gold_won
+        description: "The number of gold medals won by the athlete."
+      - name: silver_won
+        description: "The number of silver medals won by the athlete."
+      - name: bronze_won
+        description: "The number of bronze medals won by the athlete."
+
+    # Define composite primary key using constraints
+    constraints:
+      - type: primary_key
+        columns:
+          - sport_id
+          - name

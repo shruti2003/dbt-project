@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: Country_Medals
+    description: |
+      This model creates a table that contains the medal counts (bronze, silver, gold)
+      for each National Olympic Committee (NOC), ensuring there are no duplicate entries
+      and handling NULL values for `noc`.
+    columns:
+      - name: noc
+        description: |
+          National Olympic Committee code, used to identify the country in the medal count table.
+        tests:
+          - not_null
+          - unique
+      - name: bronze
+        description: |
+          The count of bronze medals won by the country represented by the NOC.
+      - name: silver
+        description: |
+          The count of silver medals won by the country represented by the NOC.
+      - name: gold
+        description: |
+          The count of gold medals won by the country represented by the NOC.
+
+tests:
+  - name: unique
+    description: |
+      Ensures that each `noc` is unique in the `country_medals` model.
+  - name: not_null
+    description: |
+      Ensures that `noc` values are not NULL in the `country_medals` model.
