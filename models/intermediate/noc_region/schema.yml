@@ -1,21 +1,23 @@
 version: 2
 
 models:
-  - name: noc_region
-    description: "Creates a table with the NOC and corresponding region."
+  - name: Noc_Region
+    description: "Mapping of National Olympic Committee (NOC) codes to regions."
+    config:
+      contract:
+        enforced: true
     columns:
       - name: noc
         description: "National Olympic Committee (NOC) code."
+        data_type: string
+        constraints:
+          - type: primary_key
+        tests:
+          - unique
+          - not_null
+
+      - name: region
+        description: "Region corresponding to the NOC code."
+        data_type: string
         tests:
           - not_null
-          - unique
-      - name: region
-        description: "The region corresponding to the NOC code."
-
-tests:
-  - name: unique
-    description: |
-      Ensures that each `noc` is unique in the `noc_region` model.
-  - name: not_null
-    description: |
-      Ensures that `noc` values are not NULL in the `noc_region` model.

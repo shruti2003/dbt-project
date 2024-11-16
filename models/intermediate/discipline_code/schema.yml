@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: Discipline_Code
+    description: "Table mapping unique disciplines and their codes with auto-incrementing IDs."
+    config:
+      materialized: table  # Materialize as a table
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        description: "Auto-incrementing unique identifier for each discipline."
+        data_type: integer
+        tests:
+          - unique
+          - not_null
+
+      - name: disciplines_code
+        description: "Code representing a specific discipline."
+        data_type: string
+        tests:
+          - unique
+          - not_null
+
+      - name: discipline
+        description: "Name of the discipline."
+        data_type: string
+        tests:
+          - not_null

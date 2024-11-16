@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: Medal_Type_Record
+    description: "Table mapping athlete names, normalized sports, and medal counts with sport IDs."
+    config:
+      materialized: table  # Materialize as a table
+      contract:
+        enforced: true
+    columns:
+      - name: name
+        description: "Full name of the athlete (first_name and last_name combined)."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: sport_id
+        description: "Identifier for the sport, from the Event table."
+        data_type: integer
+        tests:
+          - relationships:
+              to: ref('Event')  # Ensure sport_id references id in Event table
+              field: id
+
+      - name: noc
+        description: "National Olympic Committee (NOC) code of the athlete's country."
+        data_type: string
+        tests:
+          - not_null
+
+      - name: start_year
+        description: "Starting year of the athlete's career."
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: end_year
+        description: "Ending year of the athlete's career."
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: gold_won
+        description: "Number of gold medals won by the athlete."
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: silver_won
+        description: "Number of silver medals won by the athlete."
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: bronze_won
+        description: "Number of bronze medals won by the athlete."
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: sport
+        description: "Normalized name of the sport."
+        data_type: string
+        tests:
+          - not_null
