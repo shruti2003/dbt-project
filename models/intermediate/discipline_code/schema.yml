@@ -27,5 +27,9 @@ models:
       - name: discipline
         description: "Name of the discipline."
         data_type: string
+        constraints:
+          - type: foreign_key
+            to: ref('Teams')
+            to_columns: [discipline]
         tests:
           - not_null
