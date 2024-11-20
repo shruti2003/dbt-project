@@ -3,6 +3,9 @@ version: 2
 models:
   - name: summer_olympics_medal
     description: "Table for Summer Olympics Medal information, joined with Event model to retrieve sport_id and deduplicated by athlete, year, event, and medal."
+    constraints:
+      - type: primary_key
+        columns: [name, year, event, medal]
     columns:
       - name: name
         description: "Name of the athlete."

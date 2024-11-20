@@ -3,6 +3,9 @@ version: 2
 models:
   - name: tmp_teams
     description: "Staging model for the teams table with necessary transformations (casting and renaming)."
+    constraints:
+      - type: primary_key
+        columns: [code, discipline]
     columns:
       - name: code
         description: "Code for the team."

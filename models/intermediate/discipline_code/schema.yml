@@ -11,6 +11,8 @@ models:
       - name: id
         description: "Auto-incrementing unique identifier for each discipline."
         data_type: integer
+        constraints:
+          - type: primary_key
         tests:
           - unique
           - not_null

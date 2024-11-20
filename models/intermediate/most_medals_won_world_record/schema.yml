@@ -3,6 +3,9 @@ version: 2
 models:
   - name: Total_Medals_Record
     description: "This model contains the records of athletes' total medals won, with gender and sport information."
+    constraints:
+      - type: primary_key
+        columns: [first_name, last_name, num_medals]
     columns:
       - name: num_medals
         description: "The number of medals won by the athlete."

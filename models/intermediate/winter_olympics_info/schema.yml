@@ -3,6 +3,9 @@ version: 2
 models:
   - name: winter_olympics_medal
     description: "Creates a table with information about medals won in the Winter Olympics, including sport_id from the Event model."
+    constraints:
+      - type: primary_key
+        columns: [year, discipline, event]
     columns:
       - name: year
         description: "The year of the Winter Olympics."

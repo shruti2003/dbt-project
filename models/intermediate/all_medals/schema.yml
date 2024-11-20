@@ -6,6 +6,8 @@ models:
     columns:
       - name: medalist_id
         description: "Unique identifier for each medalist."
+        constraints:
+          - type: primary_key
         tests:
           - not_null
           - unique  # Ensures no duplicate `medalist_id`s

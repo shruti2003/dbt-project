@@ -7,6 +7,9 @@ models:
       materialized: table  # Materialize as a table
       contract:
         enforced: true
+    constraints:
+      - type: primary_key
+        columns: [name, sport_id]
     columns:
       - name: name
         description: "Full name of the athlete (first_name and last_name combined)."
